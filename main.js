@@ -60,11 +60,14 @@ function getEnemy()
 {
 	var enemies = g_Minigame.m_CurrentScene.m_rgEnemies;
 	var enemy = getBoss(enemies);
-	if (enemy.m_nLane != g_Minigame.CurrentScene().m_nExpectedLane) {
-		g_Minigame.m_CurrentScene.TryChangeLane(enemy.m_nLane);
-	}
-	if (enemy.m_nID != g_Minigame.CurrentScene().m_nTarget) {
-		g_Minigame.CurrentScene().TryChangeTarget(enemy.m_nID);
+	if (enemy !== undefined)
+	{
+		if (enemy.m_nLane != g_Minigame.CurrentScene().m_nExpectedLane) {
+			g_Minigame.m_CurrentScene.TryChangeLane(enemy.m_nLane);
+		}
+		if (enemy.m_nID != g_Minigame.CurrentScene().m_nTarget) {
+			g_Minigame.CurrentScene().TryChangeTarget(enemy.m_nID);
+		}
 	}
 }
 
